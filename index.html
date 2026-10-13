@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#091a2b" />
+<title>S7 改枪码 · 暗区突围 PC</title>
+<style>
+:root{--bg:#f3f6fb;--panel:#fff;--ink:#10253d;--muted:#71829a;--line:#dfe7f1;--navy:#0b2239;--blue:#1b6ff3;--blue-2:#56a2ff;--teal:#12b981;--gold:#f59e0b;--shadow:0 18px 45px rgba(16,37,61,.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 0 0,#e6f1ff 0,transparent 34%),var(--bg);color:var(--ink);font-family:Inter,"PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;line-height:1.5}
+button,input,select{font:inherit}button{cursor:pointer}.app{max-width:1240px;margin:0 auto;padding:30px 22px 56px}.hero{position:relative;overflow:hidden;border-radius:28px;padding:34px 36px 30px;background:linear-gradient(120deg,#071929 0%,#0d3153 55%,#155b86 100%);color:#fff;box-shadow:0 24px 55px rgba(7,25,41,.26)}.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(1px);pointer-events:none}.hero:before{width:370px;height:370px;right:-160px;top:-220px;background:rgba(81,173,255,.24)}.hero:after{width:260px;height:260px;right:120px;bottom:-210px;background:rgba(18,185,129,.15)}.hero-content{position:relative;z-index:1;max-width:850px}.eyebrow{display:inline-flex;align-items:center;gap:8px;margin-bottom:13px;padding:6px 11px;border:1px solid rgba(255,255,255,.2);border-radius:999px;color:#bee0ff;background:rgba(255,255,255,.07);font-size:12px;letter-spacing:.08em}.eyebrow i{width:7px;height:7px;border-radius:50%;background:#66d8ff;box-shadow:0 0 0 4px rgba(102,216,255,.15)}h1{margin:0;font-size:clamp(28px,4vw,44px);letter-spacing:-.04em;line-height:1.15}.sub{margin:14px 0 0;color:#d6e8fb;font-size:14px}.toolbar{display:flex;gap:12px;align-items:center;margin-top:26px;flex-wrap:wrap}.search-wrap{position:relative;flex:1 1 450px}.search-wrap svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:#87a0b8}.search{width:100%;height:50px;border:1px solid rgba(255,255,255,.18);border-radius:15px;padding:0 44px;background:rgba(255,255,255,.97);color:var(--ink);outline:none;box-shadow:0 8px 24px rgba(0,0,0,.12)}.search:focus{border-color:#68b5ff;box-shadow:0 0 0 4px rgba(104,181,255,.22)}.clear{position:absolute;right:10px;top:9px;width:32px;height:32px;border:0;border-radius:10px;background:transparent;color:#8da0b5;display:none}.clear.show{display:block}.clear:hover{background:#edf3fb;color:var(--ink)}.copy-all{height:50px;padding:0 17px;border:1px solid rgba(255,255,255,.25);border-radius:15px;background:rgba(255,255,255,.10);color:#fff;white-space:nowrap;transition:.2s}.copy-all:hover{background:rgba(255,255,255,.18);transform:translateY(-1px)}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}.stat{background:rgba(255,255,255,.86);border:1px solid rgba(255,255,255,.8);border-radius:18px;padding:16px 18px;box-shadow:0 8px 22px rgba(16,37,61,.06)}.stat-label{color:var(--muted);font-size:12px}.stat-value{margin-top:3px;font-size:25px;font-weight:750;letter-spacing:-.03em}.stat-value small{font-size:14px;color:var(--muted);font-weight:600}.controls{display:flex;justify-content:space-between;align-items:center;gap:14px;margin:22px 0 13px;flex-wrap:wrap}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{height:36px;border:1px solid var(--line);padding:0 14px;border-radius:999px;background:#fff;color:#60738b;font-size:13px;transition:.2s}.filter:hover{border-color:#a7c6ea;color:var(--blue)}.filter.active{border-color:#a7c6ea;background:#eaf3ff;color:#1259be;font-weight:650}.sort{height:36px;padding:0 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:#51677f;outline:none}.result-line{color:var(--muted);font-size:13px}.table-shell{background:rgba(255,255,255,.88);border:1px solid rgba(219,229,240,.95);border-radius:20px;box-shadow:var(--shadow);overflow:hidden}.table-head,.row{display:grid;grid-template-columns:minmax(120px,.75fr) minmax(260px,1.55fr) minmax(260px,1.55fr);gap:20px;align-items:center}.table-head{padding:14px 20px;background:#0e416b;color:#dcefff;font-size:12px;font-weight:700;letter-spacing:.08em}.row{padding:17px 20px;border-top:1px solid var(--line);min-height:108px;transition:background .18s}.row:hover{background:#f8fbff}.weapon{display:flex;align-items:center;gap:11px;font-size:16px;font-weight:750}.weapon-index{display:grid;place-items:center;width:28px;height:28px;border-radius:9px;background:#eaf3ff;color:#2771cf;font-size:11px;font-weight:700}.option{min-width:0}.option-top{display:flex;align-items:center;gap:9px;min-width:0}.tag{flex:0 0 auto;padding:4px 8px;border-radius:7px;font-size:11px;font-weight:750;letter-spacing:.02em}.tag.full{background:#eaf3ff;color:#1764c8}.tag.value{background:#e8fbf4;color:#07825e}.price{margin-left:auto;color:#153959;font-weight:800;white-space:nowrap}.price em{font-style:normal;font-size:11px;color:#8293a8;font-weight:650;margin-left:2px}.code-line{display:flex;align-items:center;gap:8px;margin-top:8px;min-width:0}.code{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#294968;font-size:13px;font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace}.copy{flex:0 0 auto;height:29px;padding:0 10px;border:1px solid #bfd3eb;border-radius:8px;background:#fff;color:#2768ac;font-size:12px;transition:.18s}.copy:hover{background:#edf5ff;border-color:#76a9df}.copy.copied{background:#e8fbf4;color:#07825e;border-color:#8fdbc1}.empty{color:#9baabd;font-size:13px}.empty .tag{background:#f0f3f7;color:#8291a4}.empty .price{color:#9baabd;font-weight:600}.no-results{display:none;padding:54px 20px;text-align:center;color:var(--muted)}.no-results.show{display:block}.no-results strong{display:block;margin-bottom:5px;color:var(--ink);font-size:16px}.footer{display:flex;justify-content:space-between;gap:16px;margin:16px 2px 0;color:#8b9bad;font-size:12px}.toast{position:fixed;left:50%;bottom:24px;z-index:10;transform:translate(-50%,18px);padding:11px 15px;border-radius:11px;background:#102d48;color:#fff;font-size:13px;box-shadow:0 10px 28px rgba(8,30,50,.28);opacity:0;pointer-events:none;transition:.24s}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (max-width:850px){.stats{grid-template-columns:repeat(2,1fr)}.table-head,.row{grid-template-columns:1fr 1fr;gap:12px}.table-head div:first-child,.row .weapon{grid-column:1/-1}.table-head{padding:11px 16px}.row{padding:15px 16px}.weapon{margin-bottom:-2px}.option-top{gap:7px}.price{font-size:14px}}
+@media (max-width:560px){.app{padding:14px 11px 38px}.hero{padding:24px 19px;border-radius:22px}.stats{gap:8px;margin:12px 0}.stat{padding:12px 13px;border-radius:14px}.stat-value{font-size:21px}.copy-all{width:100%}.controls{margin-top:16px}.sort{width:100%}.table-shell{border-radius:16px}.table-head{display:none}.row{display:block;padding:15px 14px}.weapon{margin-bottom:14px}.option{padding:10px 0}.option+.option{border-top:1px dashed #dfe7f1}.footer{display:block;line-height:1.8}}
+</style>
+</head>
+<body>
+<main class="app">
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow"><i></i>S7 SEASON · PC 枪械资料</div>
+      <h1>暗区突围 · S7 改枪码</h1>
+      <p class="sub">按枪械查看满改与性价比方案，价格单位为 W。点击复制即可带走对应改枪码。</p>
+      <div class="toolbar">
+        <div class="search-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+          <input id="search" class="search" autocomplete="off" placeholder="搜索枪械名称或改枪码" />
+          <button id="clear" class="clear" aria-label="清除搜索">×</button>
+        </div>
+        <button id="copyAll" class="copy-all">复制当前可见改枪码</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats" aria-label="数据概览">
+    <div class="stat"><div class="stat-label">枪械总数</div><div class="stat-value" id="totalStat">28 <small>把</small></div></div>
+    <div class="stat"><div class="stat-label">满改方案</div><div class="stat-value" id="fullStat">27 <small>条</small></div></div>
+    <div class="stat"><div class="stat-label">性价比方案</div><div class="stat-value" id="valueStat">16 <small>条</small></div></div>
+    <div class="stat"><div class="stat-label">满改平均参考价</div><div class="stat-value" id="avgStat">50.3 <small>W</small></div></div>
+  </section>
+
+  <section class="controls">
+    <div class="filters" role="group" aria-label="方案筛选">
+      <button class="filter active" data-filter="all">全部枪械</button>
+      <button class="filter" data-filter="full">有满改</button>
+      <button class="filter" data-filter="value">有性价比</button>
+    </div>
+    <select id="sort" class="sort" aria-label="排序方式">
+      <option value="source">按原表顺序</option>
+      <option value="name">按枪械名称</option>
+      <option value="fullAsc">满改价格从低到高</option>
+      <option value="fullDesc">满改价格从高到低</option>
+      <option value="valueAsc">性价比价格从低到高</option>
+      <option value="valueDesc">性价比价格从高到低</option>
+    </select>
+  </section>
+  <div class="result-line" id="resultLine"></div>
+
+  <section class="table-shell" aria-label="改枪码列表">
+    <div class="table-head"><div>枪械</div><div>满改方案 <span style="font-weight:500;opacity:.7">/ 参考价</span></div><div>性价比方案 <span style="font-weight:500;opacity:.7">/ 参考价</span></div></div>
+    <div id="list"></div>
+    <div id="noResults" class="no-results"><strong>没有找到匹配内容</strong><span>试试搜索其他枪械名称或改枪码</span></div>
+  </section>
+  <div class="footer"><span>数据整理自《S7改枪码.xlsx》</span><span>价格与改枪码请以游戏内实际情况为准</span></div>
+</main>
+<div id="toast" class="toast" role="status"></div>
+<script>
+const DATA = [{"name":"H416","full":{"code":"改枪-efDHtrERUYCR5P4j4","price":"72W","priceNum":72.0},"value":{"code":"改枪-efDHtrERUYCR5P424","price":"35W","priceNum":35.0},"index":0},{"name":"A545","full":{"code":"改枪-efDHtrERUYCR5P4L4","price":"63W","priceNum":63.0},"value":{"code":"","price":"","priceNum":null},"index":1},{"name":"AEK","full":{"code":"改枪-efDHtrERUYCR5P4X4","price":"66W","priceNum":66.0},"value":{"code":"改枪-efDHtrERUYCR5P4i4","price":"18W","priceNum":18.0},"index":2},{"name":"FAMAS","full":{"code":"改枪-efDHtrERUYCR5P4w4","price":"46W","priceNum":46.0},"value":{"code":"改枪-efDHtrERUYCR5P4E4","price":"26W","priceNum":26.0},"index":3},{"name":"ACE31","full":{"code":"改枪-efDHtrERUYCR5P454","price":"28W","priceNum":28.0},"value":{"code":"改枪-efDHtrERUYCR5P4l4","price":"16W","priceNum":16.0},"index":4},{"name":"AN94","full":{"code":"改枪-efDHtrERUYCR5P4V4","price":"50W","priceNum":50.0},"value":{"code":"改枪-efDHtrERUYCR5P4c4","price":"11W","priceNum":11.0},"index":5},{"name":"PCC-9","full":{"code":"","price":"","priceNum":null},"value":{"code":"改枪-efDHtrERUYCR5P4G4","price":"23W","priceNum":23.0},"index":6},{"name":"91法老","full":{"code":"改枪-efDHtrERUYCR5P4r4","price":"75W","priceNum":75.0},"value":{"code":"","price":"","priceNum":null},"index":7},{"name":"ZC807","full":{"code":"改枪-efDHtrERUYCR5P4J4","price":"29W","priceNum":29.0},"value":{"code":"改枪-efDHtrERUYCR5P464","price":"15W","priceNum":15.0},"index":8},{"name":"AR57","full":{"code":"改枪-efDHtrERUYCR5P4W4","price":"52W","priceNum":52.0},"value":{"code":"改枪-efDHtrERUYCR5P4u4","price":"18W","priceNum":18.0},"index":9},{"name":"AUG","full":{"code":"改枪-efDHtrERUYCR5P4d4","price":"35W","priceNum":35.0},"value":{"code":"改枪-efDHtrERUYCR5P4C4","price":"18W","priceNum":18.0},"index":10},{"name":"SCAR-L","full":{"code":"改枪-efDHtrERUYCR5P4B4","price":"49W","priceNum":49.0},"value":{"code":"改枪-efDHtrERUYCR5P434","price":"12W","priceNum":12.0},"index":11},{"name":"T951","full":{"code":"改枪-efDHtrERUYCR5P4S4","price":"39W","priceNum":39.0},"value":{"code":"改枪-efDHtrERUYCR5P4T4","price":"16W","priceNum":16.0},"index":12},{"name":"MDR","full":{"code":"改枪-efDHtrERUYCR5P4m4","price":"27W","priceNum":27.0},"value":{"code":"改枪-efDHtrERUYCR5P4R4","price":"14W","priceNum":14.0},"index":13},{"name":"T192","full":{"code":"改枪-efDHtrERUYCR5P484","price":"56W","priceNum":56.0},"value":{"code":"","price":"","priceNum":null},"index":14},{"name":"MPX","full":{"code":"改枪-efDHtrERUYCR5P4n4","price":"67W","priceNum":67.0},"value":{"code":"","price":"","priceNum":null},"index":15},{"name":"P90","full":{"code":"改枪-efDHtrERUYCR5P4k4","price":"57W","priceNum":57.0},"value":{"code":"","price":"","priceNum":null},"index":16},{"name":"Banshee","full":{"code":"改枪-efDHtrERUYCR5P4y4","price":"64W","priceNum":64.0},"value":{"code":"","price":"","priceNum":null},"index":17},{"name":"SVDS","full":{"code":"改枪-efDHtrERUYCR5P4a4","price":"56W","priceNum":56.0},"value":{"code":"改枪-efDHtrERUYCR5P414","price":"30W","priceNum":30.0},"index":18},{"name":"VSS","full":{"code":"改枪-efDHtrERUYCR5P4v4","price":"34W","priceNum":34.0},"value":{"code":"","price":"","priceNum":null},"index":19},{"name":"MK14","full":{"code":"改枪-efDHtrERUYCR5P404","price":"55W","priceNum":55.0},"value":{"code":"","price":"","priceNum":null},"index":20},{"name":"M110","full":{"code":"改枪-efDHtrERUYCR5P4K4","price":"65W","priceNum":65.0},"value":{"code":"改枪-efDHtrERUYCR5P4F4","price":"12W","priceNum":12.0},"index":21},{"name":"U191","full":{"code":"改枪-efDHtrERUYCR5P4s4","price":"57W","priceNum":57.0},"value":{"code":"改枪-efDHtrERUYCR5P4M4","price":"29W","priceNum":29.0},"index":22},{"name":"ML杠杆","full":{"code":"改枪-efDHtrERUYCR5P4Q4","price":"19W","priceNum":19.0},"value":{"code":"","price":"","priceNum":null},"index":23},{"name":"SJ","full":{"code":"改枪-efDHtrERUYCR5P4H4","price":"70W","priceNum":70.0},"value":{"code":"","price":"","priceNum":null},"index":24},{"name":"M24","full":{"code":"改枪-efDHtrERUYCR5P4Y4","price":"58W","priceNum":58.0},"value":{"code":"改枪-efDHtrERUYCR5P4g4","price":"27W","priceNum":27.0},"index":25},{"name":"USAS12","full":{"code":"改枪-efDHtrERUYCR5P4N4","price":"23W","priceNum":23.0},"value":{"code":"","price":"","priceNum":null},"index":26},{"name":"RPK16","full":{"code":"改枪-efDHtrERUYCR5P474","price":"46W","priceNum":46.0},"value":{"code":"","price":"","priceNum":null},"index":27}];
+const state = {query:'', filter:'all', sort:'source'};
+const list = document.getElementById('list'), search = document.getElementById('search'), clear = document.getElementById('clear'), sort = document.getElementById('sort'), resultLine = document.getElementById('resultLine'), noResults = document.getElementById('noResults'), toast = document.getElementById('toast');
+const esc = s => String(s ?? '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+function option(item, kind, label){
+  if(!item.code) return `<div class="option empty"><div class="option-top"><span class="tag ${kind}">${label}</span><span class="price">暂无</span></div><div class="code-line"><span class="empty">当前未提供该方案</span></div></div>`;
+  return `<div class="option"><div class="option-top"><span class="tag ${kind}">${label}</span><span class="price">${esc(item.price || '暂无')}<em>参考价</em></span></div><div class="code-line"><span class="code" title="${esc(item.code)}">${esc(item.code)}</span><button class="copy" data-code="${esc(item.code)}">复制</button></div></div>`;
+}
+function filtered(){
+ let rows = DATA.filter(x => { const q=state.query.trim().toLowerCase(); const hit=!q || [x.name,x.full.code,x.value.code].some(v=>String(v||'').toLowerCase().includes(q)); const type=state.filter==='all'||(state.filter==='full'?x.full.code:x.value.code); return hit && type; });
+ const byPrice=(key,dir)=>(a,b)=>{const av=a[key].priceNum??Infinity,bv=b[key].priceNum??Infinity; return (av-bv)*dir || a.index-b.index};
+ if(state.sort==='name') rows.sort((a,b)=>a.name.localeCompare(b.name,'zh-CN')); else if(state.sort==='fullAsc') rows.sort(byPrice('full',1)); else if(state.sort==='fullDesc') rows.sort(byPrice('full',-1)); else if(state.sort==='valueAsc') rows.sort(byPrice('value',1)); else if(state.sort==='valueDesc') rows.sort(byPrice('value',-1));
+ return rows;
+}
+function render(){
+ const rows=filtered(); list.innerHTML=rows.map((x,i)=>`<article class="row"><div class="weapon"><span class="weapon-index">${String(i+1).padStart(2,'0')}</span><span>${esc(x.name)}</span></div>${option(x.full,'full','满改')}${option(x.value,'value','性价比')}</article>`).join('');
+ noResults.classList.toggle('show',rows.length===0); resultLine.textContent=`显示 ${rows.length} / ${DATA.length} 把枪械`;
+}
+function flash(msg){toast.textContent=msg;toast.classList.add('show');clearTimeout(flash.t);flash.t=setTimeout(()=>toast.classList.remove('show'),1800)}
+async function copy(text){try{await navigator.clipboard.writeText(text);flash('改枪码已复制');return true}catch(e){const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();flash('改枪码已复制');return true}}
+search.addEventListener('input',e=>{state.query=e.target.value;clear.classList.toggle('show',!!state.query);render()});clear.addEventListener('click',()=>{search.value='';state.query='';clear.classList.remove('show');search.focus();render()});sort.addEventListener('change',e=>{state.sort=e.target.value;render()});document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');state.filter=btn.dataset.filter;render()}));list.addEventListener('click',e=>{const btn=e.target.closest('.copy');if(!btn)return;copy(btn.dataset.code).then(()=>{btn.textContent='已复制';btn.classList.add('copied');setTimeout(()=>{btn.textContent='复制';btn.classList.remove('copied')},1400)})});document.getElementById('copyAll').addEventListener('click',async()=>{const codes=filtered().flatMap(x=>[x.full.code,x.value.code]).filter(Boolean);if(!codes.length){flash('当前没有可复制的改枪码');return}await copy(codes.join('\n'));flash(`已复制 ${codes.length} 条改枪码`)});
+render();
+</script>
+</body>
+</html>
