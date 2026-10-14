@@ -731,15 +731,15 @@
       "name": "S12K",
       "category": "散弹枪",
       "tier": "T4",
-      "speed": "",
-      "caliber": "",
+      "speed": "200",
+      "caliber": "12*70",
       "extreme": "efD4lV5RUYCR5P4BP",
       "balanced": "efD4lV5RUYCR5P4dP",
       "maxed": "efD4lV5RUYCR5P4CP",
       "kit": "",
       "quick": "",
       "recommended": "",
-      "power": "",
+      "power": "较高",
       "note": ""
     },
     {
