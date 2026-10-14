@@ -581,15 +581,15 @@
       "name": "M16",
       "category": "突击步枪",
       "tier": "T3",
-      "speed": "",
-      "caliber": "",
+      "speed": "660",
+      "caliber": "5.56*45",
       "extreme": "efD4lV5RUYCR5P4kP",
       "balanced": "efD4lV5RUYCR5P4nP",
       "maxed": "efD4lV5RUYCR5P48P",
       "kit": "",
       "quick": "",
       "recommended": "",
-      "power": "",
+      "power": "较高",
       "note": ""
     },
     {
