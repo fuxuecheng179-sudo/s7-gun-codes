@@ -416,15 +416,15 @@
       "name": "USAS12",
       "category": "散弹枪",
       "tier": "T2",
-      "speed": "",
-      "caliber": "",
+      "speed": "275",
+      "caliber": "12*70",
       "extreme": "",
       "balanced": "efD4lV5RUYCR5P4WP",
       "maxed": "efD4lV5RUYCR5P4uP",
       "kit": "",
       "quick": "",
       "recommended": "",
-      "power": "",
+      "power": "较高",
       "note": "历史表改枪码"
     },
     {
