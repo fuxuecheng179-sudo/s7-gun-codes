@@ -564,17 +564,17 @@
     },
     {
       "name": "SVTU",
-      "category": "射手步枪",
+      "category": "卡宾枪",
       "tier": "T3",
-      "speed": "",
-      "caliber": "",
+      "speed": "200",
+      "caliber": "7.62*54",
       "extreme": "efD4lV5RUYCR5P4mP",
       "balanced": "",
       "maxed": "",
       "kit": "",
       "quick": "",
       "recommended": "",
-      "power": "",
+      "power": "高",
       "note": ""
     },
     {
